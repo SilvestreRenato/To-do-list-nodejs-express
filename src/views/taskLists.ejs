@@ -21,7 +21,9 @@
       <% tasks.forEach(task => { %>
         <li class="list-group-item bg-dark main-text p-3" id="<%= task.title %>">
           <%= task.title %>
-          <button class="btn btn-danger btn-sm position-absolute top-50 end-0 translate-middle-y me-3">Excluir</button>
+          <form action="/delete/<%= task.title %>" method="post">
+            <button type="submit" class="btn btn-danger btn-sm position-absolute top-50 end-0 translate-middle-y me-3">Excluir</button>
+          </form>
         </li>
       <% }) %>
     </ul>

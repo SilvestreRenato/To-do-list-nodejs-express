@@ -26,8 +26,8 @@ taskListModel = {
   },
 
   // Excluir uma Lista
-  delete() {
-    
+  delete(title) {
+    tasklist = tasklist.filter(task => task.title !== title)
   }
 }
 

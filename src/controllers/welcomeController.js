@@ -24,8 +24,16 @@ const welcomeController = {
     taskListModel.createList(title)
     
     res.redirect('/taskLists')
-  } 
+  },
 
+  // POST /delete/:title
+  delete: (req, res) => {
+    const title = req.params.title
+
+    taskListModel.delete(title)
+
+    res.redirect('/taskLists')
+  }
 }
 
 module.exports = welcomeController
