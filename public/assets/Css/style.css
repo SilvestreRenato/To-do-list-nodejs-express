@@ -1,3 +1,7 @@
+body {
+  padding: 0 10rem;
+}
+
 .main-text {
   color: whitesmoke;
 }

@@ -5,5 +5,6 @@ const router = express.Router()
 
 // Rota inicial
 router.get('/', welcomeController.index)
+router.get('/taskLists', welcomeController.show)
 
 module.exports = router
