@@ -1,7 +1,7 @@
 let tasklist = [
-  { title: "Tarefas de Casa", completed: false },
-  { title: "Tarefas do Trabalho", completed: false },
-  { title: "Tarefa da Faculdade", completed: false }
+  { title: "Tarefas de Casa", task: [], completed: false },
+  { title: "Tarefas do Trabalho", task: [], completed: false },
+  { title: "Tarefa da Faculdade", task: [], completed: false }
   
 ]
 
@@ -12,6 +12,17 @@ taskListModel = {
   // Exibir todas as listas
   getAllTasks() {
     return tasklist
+  },
+
+  // Cria uma lista de tarefas
+  createList(title) {
+    const newList = {
+      title: title,
+      tasks: [],
+      completed: false
+    }
+    tasklist.push(newList)
+    return newList
   },
 
   // Excluir uma Lista
