@@ -18,6 +18,7 @@ const welcomeController = {
     res.render('createList')
   },
 
+  // GET /task-list/:title
   showList: (req, res) => {
     const title = req.params.title
 
@@ -32,6 +33,15 @@ const welcomeController = {
     taskListModel.createList(title)
     
     res.redirect('/taskLists')
+  },
+
+  // POST /complete/:title
+  completeTask: (req, res) => {
+    const { title, taskName } = req.params
+
+    taskListModel.complete(title, taskName)
+
+    res.redirect(`/task-list/${title}`)
   },
 
   // POST /delete/:title

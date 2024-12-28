@@ -18,6 +18,9 @@ router.get('/createList', welcomeController.create)
 // Cria a nova lista
 router.post('/createList', welcomeController.createList)
 
+// Marca um tarefa da lista com completa
+router.post('/complete/:title/:taskName', welcomeController.completeTask)
+
 // Exclui Lista
 router.post('/delete/:title', welcomeController.delete)
 

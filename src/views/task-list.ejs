@@ -21,11 +21,13 @@
     </form>
     <ul class="list-group">
       <% taskList.taskArr.forEach(task => { %>
-       <li class="list-group-item bg-dark main-text p-3">
+       <li class="list-group-item <%= task.completed ? 'bg-success' : 'bg-dark' %> main-text p-3">
         <%= task.taskName %>
-        <form action="/complete/<%= task.title %>" method="post">
-          <button type="submit" class="btn btn-success btn-sm position-absolute top-50 end-0 translate-middle-y me-3">Completar</button>
-        </form>
+        <% if (!task.completed) { %>
+          <form action="/complete/<%= taskList.title %>/<%= task.taskName %>" method="post">
+            <button type="submit" class="btn btn-success btn-sm position-absolute top-50 end-0 translate-middle-y me-3">Completar</button>
+          </form>
+        <% } %>
        </li>
       <% }) %>
 

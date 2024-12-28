@@ -26,10 +26,19 @@ taskListModel = {
     return newList
   },
 
+  // Encontrar tarefa pelo titulo
   getTaskListByTitle(title) {
     const listOfTasks = tasklist.find(list => list.title === title)
-    console.log(listOfTasks)
     return listOfTasks
+  },
+
+  // Completar Tarefa
+  complete(title, taskName) {
+    const list = tasklist.find(task => task.title === title)
+
+    const task = list.taskArr.find(t => t.taskName === taskName)
+
+    task.completed = true
   },
 
   // Excluir uma Lista
