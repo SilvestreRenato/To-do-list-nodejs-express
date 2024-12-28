@@ -35,6 +35,16 @@ const welcomeController = {
     res.redirect('/taskLists')
   },
 
+  // POST /createTask/:title/:taskName
+  createTask:(req, res) => {
+    const { title } = req.params
+    const newTaskName = req.body.taskName
+
+    taskListModel.createTask(title, newTaskName)
+
+    res.redirect(`/task-list/${title}`)
+  },
+
   // POST /complete/:title
   completeTask: (req, res) => {
     const { title, taskName } = req.params

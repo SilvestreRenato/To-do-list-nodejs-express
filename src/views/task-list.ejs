@@ -15,12 +15,12 @@
     <h2 class="main-text"><%= taskList.title %></h2>
     <form action="/createTask/<%= taskList.title %>" method="post">
       <div class="input-group mb-3">
-        <input type="text" class="form-control bg-dark text-light" name="title">
+        <input type="text" class="form-control bg-dark text-light" name="taskName">
         <button class="btn btn-primary" type="submit">Criar</button>
       </div>
     </form>
-    <ul class="list-group">
-      <% taskList.taskArr.forEach(task => { %>
+    <ul class="list-group mb-3  ">
+      <% taskList.tasks.forEach(task => { %>
        <li class="list-group-item <%= task.completed ? 'bg-success' : 'bg-dark' %> main-text p-3">
         <%= task.taskName %>
         <% if (!task.completed) { %>
@@ -30,8 +30,8 @@
         <% } %>
        </li>
       <% }) %>
-
     </ul>
+    <button class="btn btn-secondary"><a href="/taskLists" class="text-decoration-none main-text">Voltar para todas as listas</a></button>
 
   </div>
 
