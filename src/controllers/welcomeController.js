@@ -18,6 +18,14 @@ const welcomeController = {
     res.render('createList')
   },
 
+  showList: (req, res) => {
+    const title = req.params.title
+
+    const taskList = taskListModel.getTaskListByTitle(title)
+
+    res.render('task-list', { taskList })
+  },
+
   // POST /createList
   createList: (req, res) => {
     const title = req.body.title

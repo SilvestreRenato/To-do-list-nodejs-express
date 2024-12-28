@@ -9,6 +9,9 @@ router.get('/', welcomeController.index)
 // Exibe as Listas
 router.get('/taskLists', welcomeController.show)
 
+// Exibe tarefas de uma lista
+router.get('/task-list/:title', welcomeController.showList)
+
 // Exibe o formulario para criação de lista
 router.get('/createList', welcomeController.create)
 

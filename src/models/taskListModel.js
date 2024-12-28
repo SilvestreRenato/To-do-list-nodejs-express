@@ -1,11 +1,12 @@
 let tasklist = [
-  { title: "Tarefas de Casa", task: [], completed: false },
-  { title: "Tarefas do Trabalho", task: [], completed: false },
-  { title: "Tarefa da Faculdade", task: [], completed: false }
-  
+  { title: "Tarefas de Casa", taskArr: [{taskName: "varrer a sala", completed: false}, {taskName: "Lavar o banheiro", completed: false}], completed: false },
+  { title: "Tarefas do Trabalho", taskArr: [], completed: false },
+  { title: "Tarefa da Faculdade", taskArr: [], completed: false }
 ]
 
 // tasklist = [ { title: string, completed: boolean }, {}, {}, ... ] <-- Formato para as listas
+// taskArr = [ {taskName, completed} ]
+
 
 taskListModel = {
 
@@ -23,6 +24,12 @@ taskListModel = {
     }
     tasklist.push(newList)
     return newList
+  },
+
+  getTaskListByTitle(title) {
+    const listOfTasks = tasklist.find(list => list.title === title)
+    console.log(listOfTasks)
+    return listOfTasks
   },
 
   // Excluir uma Lista
