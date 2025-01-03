@@ -8,6 +8,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
+    "start": "node src/index.js",
     "dev": "node --watch src/index.js"
   },
   "author": "",
